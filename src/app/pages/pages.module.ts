@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { BuscarCComponent } from './buscar-c/buscar-c.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -13,7 +14,8 @@ import { BuscarCComponent } from './buscar-c/buscar-c.component';
     BuscarCComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentsModule
   ]
 })
 export class PagesModule { }
