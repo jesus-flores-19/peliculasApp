@@ -11,6 +11,6 @@ export class PeliculasService {
   constructor(private http: HttpClient) { }
 
   getCartelera(): Observable<CarteleraResponse>{
-    return this.http.get<CarteleraResponse>("https://api.themoviedb.org/3/movie/now_playing?api_key=2819c6599132cb1c015ba87a44ea1cb5&language=en-US&page=1");
+    return this.http.get<CarteleraResponse>("https://api.themoviedb.org/3/movie/now_playing?api_key=2819c6599132cb1c015ba87a44ea1cb5&language=es-ES&page=1");
   }
 }
