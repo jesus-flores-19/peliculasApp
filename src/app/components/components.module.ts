@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SwiperModule } from 'swiper/angular';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
@@ -18,7 +19,8 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SwiperModule
   ]
 })
 export class ComponentsModule { }
