@@ -41,3 +41,8 @@ hr {
 .block {
     display: block;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+}
