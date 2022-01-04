@@ -2,7 +2,8 @@
     <ng-template swiperSlide *ngFor="let movie of movies">
         <div class="row align-items-end" style="height: 330px;" [ngStyle]="{
             'background-size': 'cover',
-            'background-image': 'url(https://image.tmdb.org/t/p/w500/o76ZDm8PS9791XiuieNB93UZcRV.jpg)'
+            'background-image': 'url(https://image.tmdb.org/t/p/w500'+ movie.backdrop_path +')',
+            'background-position': 'top'
         }">
             <div class="col info-pelicula">
                 <h1 class="text-white">{{movie.title}}</h1>
