@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http"
 import { PagesModule } from './pages/pages.module';
 import { SwiperModule } from 'swiper/angular';
+import { RatingModule } from 'ng-starrating';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +19,6 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     ComponentsModule,
     PagesModule,
-    SwiperModule,
 
     HttpClientModule
   ],
