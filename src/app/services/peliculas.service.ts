@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { Observable } from 'rxjs';
+import { tap } from "rxjs/operators"
 import { CarteleraResponse } from '../interface/cartelera.interface';
 
 @Injectable({
@@ -10,8 +11,8 @@ export class PeliculasService {
 
   constructor(private http: HttpClient) { }
 
-  api_movie: string = "https://api.themoviedb.org/3"
-  pageCartelera: number = 1;
+  private api_movie: string = "https://api.themoviedb.org/3"
+  private pageCartelera: number = 1;
 
   get params(){
     return {
@@ -24,6 +25,10 @@ export class PeliculasService {
   getCartelera(): Observable<CarteleraResponse>{
     return this.http.get<CarteleraResponse>(`${this.api_movie}/movie/now_playing`, {
       params: this.params
-    });
+    }).pipe(
+      tap( () => {
+        this.pageCartelera +=1 ;
+      })
+    );
   }
 }
