@@ -10,12 +10,14 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 export class HomeComponent implements OnInit {
 
   public movies: Movie[] = [];
+  public moviesSlideShow: Movie[] = [];
 
   constructor(private _peliculasService: PeliculasService) {}
 
   ngOnInit(): void {
     this._peliculasService.getCartelera().subscribe(data=> {
       this.movies = data.results;
+      this.moviesSlideShow = data.results;
     })
   }
 
