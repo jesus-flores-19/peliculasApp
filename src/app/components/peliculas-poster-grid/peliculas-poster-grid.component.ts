@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, HostListener} from '@angular/core';
 import { Movie } from 'src/app/interface/cartelera.interface';
+import { PeliculasService } from 'src/app/services/peliculas.service';
 
 @Component({
   selector: 'app-peliculas-poster-grid',
@@ -9,13 +10,22 @@ import { Movie } from 'src/app/interface/cartelera.interface';
 export class PeliculasPosterGridComponent implements OnInit {
 
   @Input() movies: Movie[]
+
   @HostListener("window:scroll", ["$event"])
     onScrroll(){
-      const pos = document.documentElement.scrollHeight || document.body.scrollHeight
-      console.log(pos);
+      const pos = document.documentElement.scrollTop || document.body.scrollTop
+      const max = document.documentElement.scrollHeight || document.body.scrollHeight
+      console.log({pos, max});
+      
+      if(pos > (max - 900)){
+        this._peliculasService.getCartelera().subscribe( data => {
+          this.movies.push(...data.results)
+        })
+      }
+      
     }
 
-  constructor() { }
+  constructor( private _peliculasService: PeliculasService) { }
 
   ngOnInit(): void {
   }
