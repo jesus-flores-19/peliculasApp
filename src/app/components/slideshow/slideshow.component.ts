@@ -18,14 +18,14 @@ export class SlideshowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.movies);
+    // console.log(this.movies);
   }
 
   onSwiper(swiper: any) {
-    console.log(swiper);
+    // console.log(swiper);
   }
   onSlideChange() {
-    console.log('slide change');
+    // console.log('slide change');
   }
 
 }
