@@ -7,6 +7,7 @@ import { RatingModule } from 'ng-starrating';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-poster-grid.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -25,7 +26,8 @@ import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-
     CommonModule,
     RouterModule,
     SwiperModule,
-    RatingModule
+    RatingModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }

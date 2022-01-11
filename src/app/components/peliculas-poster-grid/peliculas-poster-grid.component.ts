@@ -15,8 +15,6 @@ export class PeliculasPosterGridComponent implements OnInit {
     onScrroll(){
       const pos = document.documentElement.scrollTop || document.body.scrollTop
       const max = document.documentElement.scrollHeight || document.body.scrollHeight
-      console.log({pos, max});
-      
       if(pos > (max - 900)){
         this._peliculasService.getCartelera().subscribe( data => {
           this.movies.push(...data)
