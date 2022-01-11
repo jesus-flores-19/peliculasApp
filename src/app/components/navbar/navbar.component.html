@@ -5,9 +5,9 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="ms-auto d-flex">
-            <input class="form-control mr-2" type="search" placeholder="Buscar Pelicula" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="ms-auto d-flex">
+            <input #txtBuscar (keyup.enter)="buscarPelicula(txtBuscar.value)" class="form-control mr-2" type="search" placeholder="Buscar Pelicula" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarPelicula(txtBuscar.value)">Search</button>
+        </div>
     </div>
 </nav>

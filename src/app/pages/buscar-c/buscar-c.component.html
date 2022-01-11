@@ -1,1 +1,4 @@
-<p>buscar-c works!</p>
+<h1>Buscar peliculas: <small class="text-muted">{{textoPelicula}}</small></h1>
+<hr>
+
+<app-peliculas-poster-grid *ngIf="movies.length > 0" [movies]="movies"></app-peliculas-poster-grid>

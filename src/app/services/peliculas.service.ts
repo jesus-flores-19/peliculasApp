@@ -27,6 +27,7 @@ export class PeliculasService {
     if(this.cargardoApi){
       return of([])
     }
+
     this.cargardoApi = true
     return this.http.get<CarteleraResponse>(`${this.api_movie}/movie/now_playing`, {
       params: this.params
@@ -38,4 +39,21 @@ export class PeliculasService {
       })
     );
   }
+
+  buscarPeliculas(texto: string): Observable< Movie[]>{
+    const params= {...this.params, page: "1", query: texto}
+    return this.http.get<CarteleraResponse>(`${this.api_movie}/search/movie`, {
+      params
+    }).pipe(
+      map(data => data.results)
+    )
+  }
+
+  resetCarteleraPage(): void{
+    this.pageCartelera = 1;
+  }
+
+
+
+
 }
