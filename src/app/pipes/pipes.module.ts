@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SinposterPipe } from './sinposter.pipe';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SinposterPipe
+  ],
+  exports: [
+    SinposterPipe
+  ],
   imports: [
     CommonModule
   ]
