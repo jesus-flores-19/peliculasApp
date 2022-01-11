@@ -19,7 +19,7 @@ export class PeliculasPosterGridComponent implements OnInit {
       
       if(pos > (max - 900)){
         this._peliculasService.getCartelera().subscribe( data => {
-          this.movies.push(...data.results)
+          this.movies.push(...data)
         })
       }
       
