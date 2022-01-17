@@ -18,7 +18,7 @@ export class PeliculasService {
   get params(){
     return {
       api_key: "2819c6599132cb1c015ba87a44ea1cb5",
-      language: "es-ES",
+      language: "es-MX",
       page: this.pageCartelera
     }
   }
