@@ -1,3 +1,7 @@
 h3 {
     font-size: 19px
 }
+
+.pelicula {
+    cursor: pointer;
+}

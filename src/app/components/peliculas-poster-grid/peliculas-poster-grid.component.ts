@@ -27,7 +27,7 @@ export class PeliculasPosterGridComponent implements OnInit {
   constructor( private _peliculasService: PeliculasService, public router: Router) { }
 
   ngOnInit(): void {
-  }
+  } 
 
   mostrarPelicula(id: any) {
     this.router.navigate(["pelicula", id])
