@@ -45,4 +45,8 @@ hr {
 .swiper-button-prev,
 .swiper-button-next {
     color: white !important;
+    background-color: rgba(0, 0, 0, 0.384);
+    height: 70px;
+    width: 50px;
+    border-radius: 10px;
 }

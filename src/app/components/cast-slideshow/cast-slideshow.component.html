@@ -1,0 +1,9 @@
+<swiper [slidesPerView]="5.3" [spaceBetween]="5" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" [navigation]="true" [loop]="true">
+    <ng-template swiperSlide *ngFor="let actor of cast">
+        <div class="row">
+            <div class="col text-center text-white">
+                <img [src]="actor.profile_path | sinposter" alt="Imagen del actor" class="img-thumbnail"> {{actor.name}}
+            </div>
+        </div>
+    </ng-template>
+</swiper>

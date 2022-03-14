@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ActivationStart, Router } from '@angular/router';
 import { MovieDetails} from 'src/app/interface/movie.interface';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 import { Location } from "@angular/common"
@@ -14,7 +14,7 @@ export class PeliculaComponent implements OnInit {
 
   idPelicula = ""
   public pelicula: MovieDetails | null;
-  public cast: Cast[]
+  public cast: Cast[] = []
 
   constructor(private rutaActiva: ActivatedRoute, private service: PeliculasService, 
               private location: Location, private router: Router) { 
@@ -34,6 +34,7 @@ export class PeliculaComponent implements OnInit {
 
       this.service.actoresPelicula(this.idPelicula).subscribe(res => {
         this.cast = res
+        this.cast = this.cast.filter( actor => actor.profile_path !== null)
       })
       
     })

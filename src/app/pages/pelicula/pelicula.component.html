@@ -1,6 +1,5 @@
 <div class="row" *ngIf="pelicula">
     <div class="col-md-6">
-        <!-- Imagenes -->
         <img [src]="pelicula.poster_path | sinposter" alt="" class="img-thumbnail">
     </div>
     <div class="col-6">
@@ -24,4 +23,12 @@
             </div>
         </div>
     </div>
+</div>
+<div class="row my-5" *ngIf="cast.length > 0">
+    <div class="col">
+        <app-cast-slideshow [cast]="cast"></app-cast-slideshow>
+    </div>
+</div>
+<div class="row" style="height: 100px;">
+
 </div>
