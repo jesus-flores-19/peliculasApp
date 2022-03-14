@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 
 import { Observable, of } from 'rxjs';
-import { map, tap } from "rxjs/operators"
+import { catchError, map, tap } from "rxjs/operators"
 
 import { CarteleraResponse, Movie} from '../interface/cartelera.interface';
 import { MovieDetails } from '../interface/movie.interface';
+import {CreditsResponse } from '../interface/credits.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -52,9 +53,19 @@ export class PeliculasService {
     )
   }
 
-  informacionPelicula(id: string): Observable<MovieDetails> {
+  informacionPelicula(id: string): Observable<MovieDetails | null> {
     const params = this.params
-    return this.http.get<MovieDetails>(`${this.api_movie}/movie/${id}`, { params })
+    return this.http.get<MovieDetails>(`${this.api_movie}/movie/${id}`, { params }).pipe(
+      catchError(err => of(null) )
+    )
+  }
+
+  actoresPelicula(id: string){
+    const params = this.params
+    return this.http.get<CreditsResponse>(`${this.api_movie}/movie/${id}/credits`, { params }).pipe(
+      map( resp => resp.cast ),
+      catchError(err => of([]) )
+    ) 
   }
 
   resetCarteleraPage(): void{

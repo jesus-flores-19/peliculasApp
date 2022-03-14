@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { BuscarCComponent } from './buscar-c/buscar-c.component';
 import { ComponentsModule } from '../components/components.module';
+import { PipesModule } from '../pipes/pipes.module';
+import { RatingModule } from 'ng-starrating';
 
 
 
@@ -15,7 +17,9 @@ import { ComponentsModule } from '../components/components.module';
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule,
+    RatingModule
   ]
 })
 export class PagesModule { }
