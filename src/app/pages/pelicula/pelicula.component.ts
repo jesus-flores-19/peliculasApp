@@ -34,7 +34,7 @@ export class PeliculaComponent implements OnInit {
           return
         }
         this.pelicula = pelicula
-        this.cast = this.cast.filter(actor => actor.profile_path !== null)
+        this.cast = cast.filter(actor => actor.profile_path !== null)
       })
       
     })
